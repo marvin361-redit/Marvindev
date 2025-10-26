@@ -830,27 +830,14 @@
             scrollY = window.pageYOffset;
             canvas.style.transform = `translateY(${scrollY}px)`;
         });
-        <nav id="navbar">
-    <div class="container">
-        <div class="logo">MarvinDev</div>
-        
-        <!-- AGREGAR ESTO: -->
-        <div class="menu-toggle" id="menuToggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        
-        <ul id="navMenu">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#expertise">Expertise</a></li>
-            <li><a href="#metas">Metas</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-    </div>
-</nav>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
         const observerOptions = {
             threshold: 0.2,
             rootMargin: '0px 0px -100px 0px'
@@ -889,6 +876,7 @@
     </script>
 </body>
 </html>
+
 
 
 
